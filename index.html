@@ -13,7 +13,13 @@ h2{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);
 .fh{display:flex;justify-content:space-between;gap:8px;font-weight:600;margin-bottom:6px}.fh small{font-weight:400;color:var(--mu)}
 .chips{display:flex;flex-wrap:wrap;gap:5px}.chip{border:1px solid var(--bd);background:transparent;color:var(--tx);border-radius:8px;padding:4px 9px;cursor:pointer;font:inherit;font-size:13px}.chip:hover{border-color:var(--ac)}.chip.on{background:var(--acs);border-color:var(--ac);color:var(--ac);font-weight:600}
 .chip i{font-style:normal;color:var(--mu);font-size:11px;margin-left:4px}input[type=range]{width:100%;accent-color:var(--ac)}
-.side{position:sticky;top:12px;display:flex;flex-direction:column;gap:12px}
+
+/* Scrollable sidebar */
+.side{position:sticky;top:12px;max-height:calc(100vh - 24px);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:12px;padding-right:4px}
+.side::-webkit-scrollbar{width:5px}
+.side::-webkit-scrollbar-thumb{background:var(--bd);border-radius:4px}
+.side::-webkit-scrollbar-thumb:hover{background:var(--mu)}
+
 .st{margin-bottom:12px}.st .t{display:flex;justify-content:space-between;align-items:baseline;color:var(--mu);font-size:12px}.st .big{font-size:32px;font-weight:700;color:var(--tx);line-height:1.1}.st .d{font-size:12px;font-weight:600}
 .trk{position:relative;height:10px;background:var(--bd);border-radius:6px;margin-top:5px}.trk b{position:absolute;left:0;top:0;bottom:0;background:var(--ac);border-radius:6px;transition:width .25s}.trk u{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--tx);opacity:.6}
 .up{color:var(--up)}.dn{color:var(--dn)}.mu{color:var(--mu)}.note{font-size:12px;color:var(--mu)}
@@ -25,7 +31,7 @@ h2{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);
 .det{display:none;padding:8px 0 4px 12px}.r.open .det{display:block}.dr{display:grid;grid-template-columns:minmax(110px,220px) 1fr 52px 120px;gap:8px;align-items:center;font-size:12px;padding:2px 0}
 details summary{cursor:pointer;color:var(--mu);font-size:12px}.tr{display:grid;grid-template-columns:70px 1fr 40px;gap:8px;align-items:center;font-size:12px;margin-top:6px}
 .mini{display:none}.ex{margin-top:8px;padding:8px 10px;border-left:3px solid var(--ac);background:var(--acs);border-radius:6px;font-size:12px}
-@media(max-width:900px){main{grid-template-columns:1fr}.side{position:static}.mini{display:flex;position:fixed;left:0;right:0;bottom:0;padding:8px 14px calc(8px + env(safe-area-inset-bottom,0px));background:var(--card);border-top:1px solid var(--bd);justify-content:space-around;z-index:9;font-weight:700}.mini span small{display:block;font-weight:400;color:var(--mu);font-size:10px}.fm .rh{grid-template-columns:1fr 80px}.fm .rh .tk{display:none}.dr{grid-template-columns:1fr 50px}.dr .db,.dr .rw{display:none}}
+@media(max-width:900px){main{grid-template-columns:1fr}.side{position:static;max-height:none;overflow-y:visible;padding-right:0}.mini{display:flex;position:fixed;left:0;right:0;bottom:0;padding:8px 14px calc(8px + env(safe-area-inset-bottom,0px));background:var(--card);border-top:1px solid var(--bd);justify-content:space-around;z-index:9;font-weight:700}.mini span small{display:block;font-weight:400;color:var(--mu);font-size:10px}.fm .rh{grid-template-columns:1fr 80px}.fm .rh .tk{display:none}.dr{grid-template-columns:1fr 50px}.dr .db,.dr .rw{display:none}}
 footer{max-width:1280px;margin:0 auto;padding:0 20px 100px}footer .card{font-size:12px;color:var(--mu)}footer h3{margin:0 0 6px;font-size:12px;letter-spacing:.08em;text-transform:uppercase}footer ul{margin:0;padding-left:18px}footer li{margin-bottom:4px}footer b{color:var(--tx)}
 </style></head><body>
 <header><h1>Proposal funnel constructor</h1><p>Pick the job and letter traits you care about. Each stage's probability is the baseline rate adjusted by the effects your own data shows for every selected trait, combined as odds ratios. Unselected factors stay at average. You can select multiple options per trait to average their effects.</p></header>
